@@ -5,6 +5,9 @@ module.exports = {
 
   },
   get: function(id) {
+
+  },
+  delete: function(id) {
     
   }
 };
