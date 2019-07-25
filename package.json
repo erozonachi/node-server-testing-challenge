@@ -21,10 +21,18 @@
   },
   "homepage": "https://github.com/LambdaSchool/node-server-testing#readme",
   "devDependencies": {
+    "cross-env": "^5.2.0",
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb-base": "^13.2.0",
+    "eslint-plugin-import": "^2.18.2",
     "jest": "^24.8.0",
+    "nodemon": "^1.19.1",
     "supertest": "^4.0.2"
   },
   "dependencies": {
-    "express": "^4.17.1"
+    "dotenv": "^8.0.0",
+    "express": "^4.17.1",
+    "knex": "^0.19.1",
+    "sqlite3": "^4.0.9"
   }
 }
