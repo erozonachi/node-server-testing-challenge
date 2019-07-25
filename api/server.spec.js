@@ -19,4 +19,16 @@ describe('server', () => {
         expect(res.body).toBeInstanceOf(Object);
       });
   });
+
+  it('[DELETE] /countries/:id ALSO WORKS', async () => {
+    await Countries.insert({ name: 'Nigeria', capital: 'Abuja', population: 150000000 });
+
+    return request(server)
+      .delete('/countries/1')
+      .expect(200)
+      .then(res => {
+        expect(res.body).toBeInstanceOf(Object);
+        expect(res.body).toEqual({ message: `1 country deleted`});
+      });
+  });
 });
