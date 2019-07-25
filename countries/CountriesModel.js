@@ -15,6 +15,8 @@ module.exports = {
     return db('countries');
   },
   delete: function(id) {
-
+    return db('countries')
+      .delete()
+      .where({ id });
   }
 };
