@@ -20,4 +20,18 @@ server.post('/countries', (req, res) => {
     });
 });
 
+server.delete('/countries/:id', (req, res) => {
+  Countries.delete(req.params.id)
+    .then(count => {
+      res.status(200).json({ message: `${count} country deleted`});
+    })
+    .catch(error => {
+      const err = {
+        message: error.message,
+        stack: error.stack,
+      };
+      res.status(500).json(err);
+    });
+});
+
 module.exports = server;
