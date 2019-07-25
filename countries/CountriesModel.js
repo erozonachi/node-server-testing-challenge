@@ -6,8 +6,13 @@ module.exports = {
       .insert(country)
       .then(([ id ]) => this.get(id));
   },
-  get: function(id) {
-
+  get: function(id = null) {
+    if(id) {
+      return db('countries')
+        .where({ id })
+        .first();
+    }
+    return db('countries');
   },
   delete: function(id) {
 
